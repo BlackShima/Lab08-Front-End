@@ -33,4 +33,15 @@ function DayCount(currentDateString, eventDateString) {
   /* ==========================================================================
    Student's code here
    ========================================================================== */
-   
+   const rows = document.querySelectorAll("#schedule tr");
+
+  for (let i = 1; i < rows.length; i++) {
+
+      let cells = rows[i].cells;
+
+      let dateText = cells[1].innerText;
+
+      let interval = DayCount(currentDay, dateText);
+
+      cells[2].innerText = interval;
+  }
