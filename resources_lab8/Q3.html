@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censored Keybord</title>
+
+</head>
+<body>
+    <!-- Write your code here. -->
+  <h1>Censored Keyboard</h1>
+    <p>Please type in the box below (Q, W, X are not allowed):</p>
+    
+    <input type="text" placeholder="Try typing here...">
+
+    <script>
+        const textInput = document.querySelector("input");
+        textInput.addEventListener("keydown", function(event) {
+            const key = event.key.toLowerCase();
+            if (key === 'q' || key === 'w' || key === 'x') {
+                event.preventDefault();
+                console.log("Blocked key: " + event.key);
+            }
+        });
+    </script>
+</body>
+</html>
