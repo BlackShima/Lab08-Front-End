@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1: Array Manipulation</title>
+</head>
+<body>
+    <h1>Open the Console to see the results (F12)</h1>
+
+    <script>
+        function processArray(numbers, callback) {
+            return numbers.map(callback);
+        }
+        const myNumbers = [1, 2, 3, 4, 5];
+        function double(num) {
+            return num * 2;
+        }
+        function square(num) {
+            return num * num;
+        }
+
+        const resultDouble = processArray(myNumbers, double);
+        console.log("Original Array:", myNumbers);
+        console.log("Result (Double):", resultDouble);
+
+        const resultSquare = processArray(myNumbers, square);
+        console.log("Result (Square):", resultSquare);
+
+    </script>
+</body>
+</html>

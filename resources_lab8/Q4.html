@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow</title>
+
+</head>
+<body>
+    <!-- Write your code here. -->
+<h1>Click a button to change the background color!</h1>
+
+    <div id="button-container">
+        <button>RED</button>
+        <button>ORANGE</button>
+        <button>YELLOW</button>
+        <button>GREEN</button>
+        <button>BLUE</button>
+        <button>PURPLE</button>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach(function(btn) {
+            btn.addEventListener("click", function(event) {
+                const color = event.target.innerText;
+                document.body.style.backgroundColor = color;
+            });
+        });
+    </script>
+
+ 
+</body>
+</html>
