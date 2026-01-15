@@ -25,21 +25,39 @@
 
     <script>
         const circle = document.getElementById("gameCircle");
-        circle.addEventListener("mouseover", function() {
-            const maxWidth = window.innerWidth - 50;
-            const maxHeight = window.innerHeight - 50;
-            const newLeft = Math.floor(Math.random() * maxWidth);
-            const newTop = Math.floor(Math.random() * maxHeight);
-            circle.style.left = newLeft + "px";
-            circle.style.top = newTop + "px";
-        });
+
+        function moveCircle() {
+            const maxWidth = window.innerWidth - circle.offsetWidth;
+            const maxHeight = window.innerHeight - circle.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+
+            circle.style.left = randomX + "px";
+            circle.style.top = randomY + "px";
+            circle.style.transform = 'none';
+        }
+
         circle.addEventListener("click", function() {
+            moveCircle();
+            circle.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                circle.style.transform = 'scale(1)';
+            }, 100);
+        });
+
+        circle.addEventListener('click', function(event) {
+            
+            event.stopPropagation(); 
+
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
-            const newColor = "rgb(" + r + "," + g + "," + b + ")";
+            const newColor = `rgb(${r}, ${g}, ${b})`;
+
             circle.style.backgroundColor = newColor;
         });
+        
 
     </script>
 </body>
